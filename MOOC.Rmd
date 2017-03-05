@@ -3,6 +3,7 @@
 ## Abstract
 Add text
 [link](https://github.com/YuliyaSkakun/IODS-final)
+[link](https://yuliyaskakun.github.io/IODS-final/)
 
 ## Introduction 
 
@@ -76,7 +77,7 @@ The data was download fron the World Bank. It is a cross section data for 2013. 
 
 Data contains 79 observations (countries) that are listed below
 
-Countries                   | Countries                  | Countires
+Countries                   |                            | 
 --------------------------- | -------------------------- | ---------------------
 Andorra	                    | Croatia	                   |Hungary
 Antigua and Barbuda	        | Curacao	                   |Iceland
@@ -105,16 +106,16 @@ Spain	                      | Sweden	                   |United States
 St. Kitts and Nevis         | Switzerland	               |Uruguay
 Venezuela, RB	              | Trinidad and Tobago	       |Virgin Islands (U.S.)
 Turks and Caicos Islands	  |                            |
+                            |                            |
 
 
-
-``` {r, warning=FALSE}
+``` {r, warning=FALSE, message=FALSE}
 data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
 summary(data)
 ```
 
 
-``` {r, warning=FALSE}
+``` {r, warning=FALSE, message=FALSE}
 data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
 agedep <- data$agedep
 fertility <- data$fertility
@@ -133,25 +134,25 @@ pic <- ggpairs(data, mapping = aes( alpha = 0.3, col="orange"), cardinality_thre
 pic
 ```
 
-``` {r, warning=FALSE}
+``` {r, warning=FALSE, message=FALSE}
 
 data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
 
 hist(data$fertility, main="Distribution of fertility rate across countries", xlab="fertility", col = "turquoise2")
 ```
 
-``` {r, warning=FALSE}
+``` {r, warning=FALSE, message=FALSE}
 data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
 qplot(data$unemp, geom = "histogram", binwidth = 1, main = "Histogram for unemployment", xlab = "unemployment", col = I("black"), fill = I("pink"))
 ```
 
 
-``` {r, warning=FALSE}
+``` {r, warning=FALSE, message=FALSE}
 data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
 boxplot(data, main="Distribution of data across countries", col = "yellow2")
 ```
 
-``` {r, warning=FALSE}
+``` {r, warning=FALSE, message=FALSE}
 library(dplyr)
 library(tidyr)
 library(ggplot2)
@@ -165,7 +166,7 @@ graph
 
 Now, I will build the Correlation matrix of independent variables
 
-``` {r, warning=FALSE}
+``` {r, warning=FALSE, message=FALSE}
 library(corrplot)
 library(dplyr)
 
@@ -180,7 +181,7 @@ corrplot(cor_matrix, method = "circle", tl.cex = 1, addCoef.col = "black", type=
 ```
 
 
-``` {r, warning=FALSE}
+``` {r, warning=FALSE, message=FALSE}
 library(dplyr)
 data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
 join= c("imuni","unemp","wage", "tuberculosis","fertility")
@@ -191,7 +192,7 @@ graph1
 ```
 
 
-``` {r, warning=FALSE}
+``` {r, warning=FALSE, message=FALSE}
 data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
 agedep <- data$agedep
 fertility <- data$fertility
@@ -206,7 +207,7 @@ unemp <- data$unemp
 qplot(agedep, country, data = data) + xlab("Age dependency") + ylab("Country") + ggtitle("Age Dependency vs. Country") + geom_smooth(method = "lm")
 ```
 
-``` {r, warning=FALSE}
+``` {r, warning=FALSE, message=FALSE}
 data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
 agedep <- data$agedep
 fertility <- data$fertility
@@ -223,7 +224,7 @@ qplot(fertility, country, data = data) + xlab("Fertility") + ylab("Country") + g
 ```
 
 
-``` {r, warning=FALSE}
+``` {r, warning=FALSE, message=FALSE}
 data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
 agedep <- data$agedep
 fertility <- data$fertility
@@ -239,7 +240,7 @@ qplot(tuberculosis, sanit, data = data) + xlab("Tuberculosis") + ylab("Sanit") +
 
 ```
 
-``` {r, warning=FALSE}
+``` {r, warning=FALSE, message=FALSE}
 data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
 agedep <- data$agedep
 fertility <- data$fertility
@@ -255,7 +256,7 @@ qplot(imuni, sanit, data = data) + xlab("Immunization") + ylab("Sanit") + ggtitl
 ```
 
 
-``` {r, warning=FALSE}
+``` {r, warning=FALSE, message=FALSE}
 data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
 agedep <- data$agedep
 fertility <- data$fertility
@@ -271,7 +272,7 @@ qplot(pop,fertility, data = data) + xlab("Population") + ylab("Fertility") + ggt
 
 ```
 
-``` {r, warning=FALSE}
+``` {r, warning=FALSE, message=FALSE}
 data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
 agedep <- data$agedep
 fertility <- data$fertility
@@ -296,7 +297,7 @@ Brief description of the method you are using in your own words.
 
 Now, I will perform the ordinary least squares regression analysis in order to analyse the factors affecting population growth. OLS estimation make sure the the error between the dependent and independ variables are minimized and in such way the estimation results are the most acurate. Therefore, those variable that will show somee xplanatory power will significant and these will be taken into account when given the conclusion of my analysis.
 
-``` {r, warning=FALSE}
+``` {r, warning=FALSE, message=FALSE}
 data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
 agedep <- data$agedep
 fertility <- data$fertility
@@ -330,7 +331,7 @@ One of the reasons for that many problems is the lack of the data. Not all of th
  
 
 
-``` {r, warning=FALSE}
+``` {r, warning=FALSE, message=FALSE}
 data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
 agedep <- data$agedep
 fertility <- data$fertility
@@ -362,7 +363,7 @@ The new model we are going to test for high-income countries is
 **Pop= β0 + β1agedep + β2limmuni + β3sanit + β4sqwage +  β5fertility + β6survival65 + β7unemp**
 
 
-``` {r, warning=FALSE}
+``` {r, warning=FALSE, message=FALSE}
 data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
 agedep <- data$agedep
 fertility <- data$fertility
@@ -381,7 +382,7 @@ pairs(data1)
 ```
 
 
-``` {r, warning=FALSE}
+``` {r, warning=FALSE, message=FALSE}
 
 data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
 agedep <- data$agedep
@@ -430,7 +431,7 @@ The last variable in the regression that stands for survival to age 65 survival6
 
 
 
-``` {r, warning=FALSE}
+``` {r, warning=FALSE, message=FALSE}
 
 data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
 agedep <- data$agedep
