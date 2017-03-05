@@ -1,0 +1,389 @@
+
+##Final Assesment
+
+
+###Demographic and Health Factors Affecting Population Growth
+
+
+## Abstract
+Add text
+
+## Introduction 
+
+*Population growth is highly associated with the economic development and the migrant inflow to the country. However, such factors as health development and demographic structure may sometimes be even more significant in their force than economic development as health of the nation may predetermine the economic growth. Report on the Commission on Macroeconomics and Health (CMH, 2001) states that health plays an important role in the population growth and the economic development because of the correlation between the level of income and the burden of illness. As the result of the higher economic growth there are more possibilities on implementing programs for improving the health and increase population growth. These proves the interconnections between each other and it is becoming obvious that the issue of the health development is of high importance. However, it is influencing the welfare and the economic development through the population growth. So, the aim of the research is to check for the possible demographic and health factors which may influence the population growth. In the case of the demographic factor I will include the fertility rate which is one of the factors affecting population growth directly. The study by Joshi and Schultz (2007) have shown that usually all the population increase programs are voluntary and they are aiming at the increase of the fertility which is a demographic side of population growth issue. The results of his study has also shown that in the case rate of the fertility increase, the welfare of families, on average, increases as well. From that I may conclude that fertility and the population growth have one of the strongest impact on the welfare of the society which is an ultimate goal of every nation. However, it is quite difficult to evaluate the effect of the fertility rate increase in the country (Moffit, 2005).*
+
+
+*Another factor which will be tested in the research is health which can affect population growth through different mechanisms (Bloom and Cannin, 2008). The first one is through higher saving rates because the healthier the person the less he or she has to spend on the curing different illnesses and the more disposable income the person posses and as a result, ability to have children. Another mechanism is through education as in the case of good childhood health, they skip school less and increase their cognitive abilities together with a human capital in the country which affects economic and population growth. Also, The Mexican Commission on Macroeconomics and Health (2004) states that health development should be treated as an asset in which every country has to invest as it will minimize the number of sick people and avoid increases in unemployment rates, mortality rates and as a result decrease in GDP.* 
+
+
+*All in all, I will try to search for the factors of the population growth through health and demographic factors.*
+
+
+## Model Specification
+
+*As the aim of the research is to find the demographic and health factors which may affect the population, I will be dealing with a cross section data and analyze the effects for high income countries. The data is taken form the World Bank Databank for the year of 2013. The main regression equation is presented down below:*
+
+
+#Pop= β0 + β1*agedep + β2*limmuni + β3*sanit + β4*sqwage + β5*wage + β6*tuberculosis + β7*fertility + β8*survival65 + β9*unemp + β10*lunemp
+
+
+*The dependent variable of my choice Pop is growth rate of mid-year population for the year of 2013 which is measured in percents. The population includes all residents of a country independently from their citizenship, but excludes refugees, asylum-seekers.*
+
+
+*The first independent variable – **agedep**, represents the age dependency ratio of people of ages older than 15 and younger than 64 (expressed as a proportion per 100 working-age population). I expect the variable to have a positive effect on the population growth as people of these ages are more likely to have children. Nevertheless, it may have a very strong effect on the dependent variable as both of them account for similar indices.*  
+
+
+*The next explanatory variable – **limmuni**, the data for adequate immunization of children who received vaccines against diphtheria, pertussis (whooping cough), and tetanus (DPT). I’ve implemented the log function as I’ve wanted to normalize the data and present better interpretation of regression results. I anticipate the variable to have a positive sign after the regression, as those diseases are extremely dangerous for children at young age; hence, if the condition of vaccination isn’t met, population growth may be lower. Despite that, as I perform the regression on the data for high-income countries, the variable should not have a strong effect as the level of income often goes along with the development of medical system in a country.*
+
+
+*Percentage of the population who uses improved sanitation facilities **sanit** (flush/pour flush, composting toilet, etc.) is our next independent variable. I expect it not to have as high impact as on the low-income countries because it follows a similar logic to the variable limmuni: high-income countries are perceived a priori as having good sanitation facilities. That’s why I expect the sign of the regressed variable to be positive, but the degree of impact – to be low.*
+
+
+*The fourth and the fifth explanatory variables are squared wage and salaried workers expressed as a percentage of total number of employed **sqwage***
+*and **wage**. I assume that higher wages of people will give them more security and provide them with an incentive of having more children. I include the squared term as I do not expect the scope of the increasing wages to have the same effect on the population growth over time. That is why my expectation for wage is to have a positive sign, but for sqwage - to be negative.*
+
+
+*I also include in our regression the variable **tuberculosis** that stands for the successful treatment of tuberculosis as a percentage of all new tuberculosis cases. The “success” is defined when a patient completed treatment in a tuberculosis control program. The variable is expected to have positive effect on the population growth, as it prevents the disease and lowers mortality.*
+
+
+
+*The seventh explanatory variable **fertility** represents the fertility rate, i.e. how many children a woman could have gave birth to. As it is one of the major drivers of the population growth, hence the impact is predicted to be strong and positive.*
+*I also consider **survival65** - variable survival rates to age 65 of a cohort of newborn infants when subject to current age-specific mortality rates. The variable is expected to have positive influence on the population growth as higher survival rates give larger time span to have more children. Nevertheless, in the high income-countries the effect probably won’t be of the same significance as in the low-income ones.*
+
+
+
+*Additionally, I include 2 variables **unemp*** 
+*,**lunemp**  that deal with unemployment of females (percentage of female labour force) and long-term unemployment of both genders as a percentage of total unemployment in a country. As for females I would expect the effect to be positive: if a female is unemployed over time, but is married, for example, she may consider having children. In case of long-term unemployment impact on the population growth – the effect is expected to be negative as well: unemployment assumes low or even absent wages, as children require a lot of investment, it may be simply not feasible for people to have more children when experiencing unemployment.*
+
+
+
+
+``` {r, warning=FALSE}
+
+setwd("/Users/skakunyuliya/desktop")
+data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
+agedep <- data$agedep
+fertility <- data$fertility
+imuni <- data$imuni
+sanit <- data$sanit
+survival65 <- data$survival65
+pop <- data$pop
+tuberculosis <- data$tuberculosis
+wage <- data$wage
+unemp <- data$unemp
+
+dim(data)
+
+str(data)
+```
+
+
+``` {r, warning=FALSE}
+library(knitr)
+kable(summary(data$country), format = "pandoc", digits = 2,  align="l")
+```
+
+
+``` {r, warning=FALSE}
+data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
+summary(data)
+```
+
+
+``` {r, warning=FALSE}
+data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
+agedep <- data$agedep
+fertility <- data$fertility
+imuni <- data$imuni
+sanit <- data$sanit
+survival65 <- data$survival65
+pop <- data$pop
+tuberculosis <- data$tuberculosis
+wage <- data$wage
+unemp <- data$unemp
+
+library(GGally)
+library(ggplot2)
+
+pic <- ggpairs(data, mapping = aes( alpha = 0.3, col="orange"), cardinality_threshold=79, lower = list(combo = wrap("facethist", bins = 20)))
+pic
+```
+
+``` {r, warning=FALSE}
+
+data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
+
+hist(data$fertility, main="Distribution of fertility rate across countries", xlab="fertility", col = "turquoise2")
+```
+
+``` {r, warning=FALSE}
+data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
+qplot(data$unemp, geom = "histogram", binwidth = 1, main = "Histogram for unemployment", xlab = "unemployment", col = I("black"), fill = I("pink"))
+```
+
+
+``` {r, warning=FALSE}
+data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
+boxplot(data, main="Distribution of data across countries", col = "yellow2")
+```
+
+``` {r, warning=FALSE}
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+
+join= c("imuni","unemp","wage", "tuberculosis","fertility")
+data2 <-select(data, one_of(join))
+
+graph = ggpairs(data2, upper = list(continuous = wrap("density", color = "blue")))+ ggtitle("Distribution of data across countries")
+graph
+```
+
+*Now, I will build the Correlation matrix of independent variables*
+
+``` {r, warning=FALSE}
+library(corrplot)
+library(dplyr)
+
+data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
+join= c("imuni","unemp","wage", "tuberculosis","fertility")
+data2 <-select(data, one_of(join))
+data3 <- data2[complete.cases(data2), ]
+cor_matrix<-cor(data3) %>% round(digits=2)
+
+library(dygraphs)
+corrplot(cor_matrix, method = "circle", tl.cex = 1, addCoef.col = "black", type="upper")
+```
+
+
+``` {r, warning=FALSE}
+library(dplyr)
+data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
+join= c("imuni","unemp","wage", "tuberculosis","fertility")
+data2 <-select(data, one_of(join))
+
+graph1 = ggpairs(data2, lower = list(continuous = wrap("smooth", method = "lm", color="red")))
+graph1    
+```
+
+
+``` {r, warning=FALSE}
+data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
+agedep <- data$agedep
+fertility <- data$fertility
+imuni <- data$imuni
+sanit <- data$sanit
+survival65 <- data$survival65
+pop <- data$pop
+tuberculosis <- data$tuberculosis
+wage <- data$wage
+unemp <- data$unemp
+
+qplot(agedep, country, data = data) + xlab("Age dependency") + ylab("Country") + ggtitle("Age Dependency vs. Country") + geom_smooth(method = "lm")
+```
+
+``` {r, warning=FALSE}
+data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
+agedep <- data$agedep
+fertility <- data$fertility
+imuni <- data$imuni
+sanit <- data$sanit
+survival65 <- data$survival65
+pop <- data$pop
+tuberculosis <- data$tuberculosis
+wage <- data$wage
+unemp <- data$unemp
+
+qplot(fertility, country, data = data) + xlab("Fertility") + ylab("Country") + ggtitle("Fertility vs. Country") + geom_smooth(method = "lm", cl="yellow")
+
+```
+
+
+``` {r, warning=FALSE}
+data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
+agedep <- data$agedep
+fertility <- data$fertility
+imuni <- data$imuni
+sanit <- data$sanit
+survival65 <- data$survival65
+pop <- data$pop
+tuberculosis <- data$tuberculosis
+wage <- data$wage
+unemp <- data$unemp
+
+qplot(tuberculosis, sanit, data = data) + xlab("Tuberculosis") + ylab("Sanit") + ggtitle("Tuberculosis vs. Sanit") + geom_smooth(method = "lm", col="pink")
+
+```
+
+``` {r, warning=FALSE}
+data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
+agedep <- data$agedep
+fertility <- data$fertility
+imuni <- data$imuni
+sanit <- data$sanit
+survival65 <- data$survival65
+pop <- data$pop
+tuberculosis <- data$tuberculosis
+wage <- data$wage
+unemp <- data$unemp
+
+qplot(imuni, sanit, data = data) + xlab("Immunization") + ylab("Sanit") + ggtitle("Immunization vs. Sanit") + geom_smooth(method = "lm")
+```
+
+
+``` {r, warning=FALSE}
+data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
+agedep <- data$agedep
+fertility <- data$fertility
+imuni <- data$imuni
+sanit <- data$sanit
+survival65 <- data$survival65
+pop <- data$pop
+tuberculosis <- data$tuberculosis
+wage <- data$wage
+unemp <- data$unemp
+
+qplot(pop,fertility, data = data) + xlab("Population") + ylab("Fertility") + ggtitle("Population vs. Fertility") + geom_smooth(method = "lm", col="red")
+
+```
+
+``` {r, warning=FALSE}
+data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
+agedep <- data$agedep
+fertility <- data$fertility
+imuni <- data$imuni
+sanit <- data$sanit
+survival65 <- data$survival65
+pop <- data$pop
+tuberculosis <- data$tuberculosis
+wage <- data$wage
+unemp <- data$unemp
+join= c("imuni","unemp","wage", "tuberculosis","fertility")
+data2 <-select(data, one_of(join))
+
+gather(data2) %>% ggplot(aes(value, col="pink")) + facet_wrap("key", scales = "free") + geom_histogram()
+```
+
+
+
+## Model Estmation Results
+
+*Now, I will perform the regression analysis in order to analyse the factors affecting population growth.*
+
+``` {r, warning=FALSE}
+data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
+agedep <- data$agedep
+fertility <- data$fertility
+imuni <- data$imuni
+sanit <- data$sanit
+survival65 <- data$survival65
+pop <- data$pop
+tuberculosis <- data$tuberculosis
+wage <- data$wage
+unemp <- data$unemp
+
+limmuni <- log(imuni)
+lunemp <- log(unemp)
+sqwage <- sqrt(wage)
+data1=cbind(data,limmuni,lunemp,sqwage)
+
+
+
+model <- lm(pop ~ agedep+limmuni+sanit+sqwage+wage+tuberculosis+fertility+survival65+unemp+lunemp, data = data1)
+summary(model)
+```
+
+
+
+``` {r, warning=FALSE}
+data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
+agedep <- data$agedep
+fertility <- data$fertility
+imuni <- data$imuni
+sanit <- data$sanit
+survival65 <- data$survival65
+pop <- data$pop
+tuberculosis <- data$tuberculosis
+wage <- data$wage
+unemp <- data$unemp
+
+limmuni <- log(imuni)
+lunemp <- log(unemp)
+sqwage <- sqrt(wage)
+data1=cbind(data,limmuni,lunemp,sqwage)
+
+model <- lm(pop ~ agedep+limmuni+sanit+sqwage+wage+tuberculosis+fertility+survival65+unemp+lunemp, data = data1)
+plot(model, which = c(1, 2, 5), col = "orange",  lwd = 3)
+```
+
+
+``` {r, warning=FALSE}
+data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
+agedep <- data$agedep
+fertility <- data$fertility
+imuni <- data$imuni
+sanit <- data$sanit
+survival65 <- data$survival65
+pop <- data$pop
+tuberculosis <- data$tuberculosis
+wage <- data$wage
+unemp <- data$unemp
+
+data1=cbind(data,limmuni,lunemp,sqwage)
+
+pairs(data1)
+
+```
+
+
+``` {r, warning=FALSE}
+
+data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
+agedep <- data$agedep
+fertility <- data$fertility
+imuni <- data$imuni
+sanit <- data$sanit
+survival65 <- data$survival65
+pop <- data$pop
+tuberculosis <- data$tuberculosis
+wage <- data$wage
+unemp <- data$unemp
+
+limmuni <- log(imuni)
+lunemp <- log(unemp)
+sqwage <- sqrt(wage)
+data1=cbind(data,limmuni,lunemp,sqwage)
+
+
+model2 <- lm(pop ~ agedep+limmuni+sanit+sqwage+fertility+survival65+unemp, data = data1)
+summary(model2)
+```
+
+
+``` {r, warning=FALSE}
+
+data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
+agedep <- data$agedep
+fertility <- data$fertility
+imuni <- data$imuni
+sanit <- data$sanit
+survival65 <- data$survival65
+pop <- data$pop
+tuberculosis <- data$tuberculosis
+wage <- data$wage
+unemp <- data$unemp
+
+limmuni <- log(imuni)
+lunemp <- log(unemp)
+sqwage <- sqrt(wage)
+data1=cbind(data,limmuni,lunemp,sqwage)
+
+
+model2 <- lm(pop ~ agedep+limmuni+sanit+sqwage+fertility+survival65+unemp, data = data1)
+plot(model2, which = c(1, 2, 5), col = "blue",  lwd = 3)
+```
+
+## Conclusion
+
+##Bibliography
+
