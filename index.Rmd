@@ -1,8 +1,6 @@
 ---
 title: "IODS final course project"
 author: "Demographic and Health Factors Affecting Population Growth." 
-author1: "Prepared by: Yuliya Skakun."
-author2: "e-mail: yuliya.skakun@helsinki.fi"
 output:
   html_document:
     theme: sandstone
