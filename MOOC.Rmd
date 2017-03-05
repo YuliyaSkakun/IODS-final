@@ -1,66 +1,61 @@
 
-##Final Assesment
-
-
-###Demographic and Health Factors Affecting Population Growth
-
 
 ## Abstract
 Add text
+[link](https://github.com/YuliyaSkakun/IODS-final)
 
 ## Introduction 
 
-*Population growth is highly associated with the economic development and the migrant inflow to the country. However, such factors as health development and demographic structure may sometimes be even more significant in their force than economic development as health of the nation may predetermine the economic growth. Report on the Commission on Macroeconomics and Health (CMH, 2001) states that health plays an important role in the population growth and the economic development because of the correlation between the level of income and the burden of illness. As the result of the higher economic growth there are more possibilities on implementing programs for improving the health and increase population growth. These proves the interconnections between each other and it is becoming obvious that the issue of the health development is of high importance. However, it is influencing the welfare and the economic development through the population growth. So, the aim of the research is to check for the possible demographic and health factors which may influence the population growth. In the case of the demographic factor I will include the fertility rate which is one of the factors affecting population growth directly. The study by Joshi and Schultz (2007) have shown that usually all the population increase programs are voluntary and they are aiming at the increase of the fertility which is a demographic side of population growth issue. The results of his study has also shown that in the case rate of the fertility increase, the welfare of families, on average, increases as well. From that I may conclude that fertility and the population growth have one of the strongest impact on the welfare of the society which is an ultimate goal of every nation. However, it is quite difficult to evaluate the effect of the fertility rate increase in the country (Moffit, 2005).*
+Population growth is highly associated with the economic development and the migrant inflow to the country. However, such factors as health development and demographic structure may sometimes be even more significant in their force than economic development as health of the nation may predetermine the economic growth. Report on the Commission on Macroeconomics and Health (CMH, 2001) states that health plays an important role in the population growth and the economic development because of the correlation between the level of income and the burden of illness. As the result of the higher economic growth there are more possibilities on implementing programs for improving the health and increase population growth. These proves the interconnections between each other and it is becoming obvious that the issue of the health development is of high importance. However, it is influencing the welfare and the economic development through the population growth. So, the aim of the research is to check for the possible demographic and health factors which may influence the population growth. In the case of the demographic factor I will include the fertility rate which is one of the factors affecting population growth directly. The study by Joshi and Schultz (2007) have shown that usually all the population increase programs are voluntary and they are aiming at the increase of the fertility which is a demographic side of population growth issue. The results of his study has also shown that in the case rate of the fertility increase, the welfare of families, on average, increases as well. From that I may conclude that fertility and the population growth have one of the strongest impact on the welfare of the society which is an ultimate goal of every nation. However, it is quite difficult to evaluate the effect of the fertility rate increase in the country (Moffit, 2005).
 
 
-*Another factor which will be tested in the research is health which can affect population growth through different mechanisms (Bloom and Cannin, 2008). The first one is through higher saving rates because the healthier the person the less he or she has to spend on the curing different illnesses and the more disposable income the person posses and as a result, ability to have children. Another mechanism is through education as in the case of good childhood health, they skip school less and increase their cognitive abilities together with a human capital in the country which affects economic and population growth. Also, The Mexican Commission on Macroeconomics and Health (2004) states that health development should be treated as an asset in which every country has to invest as it will minimize the number of sick people and avoid increases in unemployment rates, mortality rates and as a result decrease in GDP.* 
+Another factor which will be tested in the research is health which can affect population growth through different mechanisms (Bloom and Cannin, 2008). The first one is through higher saving rates because the healthier the person the less he or she has to spend on the curing different illnesses and the more disposable income the person posses and as a result, ability to have children. Another mechanism is through education as in the case of good childhood health, they skip school less and increase their cognitive abilities together with a human capital in the country which affects economic and population growth. Also, The Mexican Commission on Macroeconomics and Health (2004) states that health development should be treated as an asset in which every country has to invest as it will minimize the number of sick people and avoid increases in unemployment rates, mortality rates and as a result decrease in GDP.
 
 
-*All in all, I will try to search for the factors of the population growth through health and demographic factors.*
+All in all, I will try to search for the factors of the population growth through health and demographic factors.
 
 
 ## Model Specification
 
-*As the aim of the research is to find the demographic and health factors which may affect the population, I will be dealing with a cross section data and analyze the effects for high income countries. The data is taken form the World Bank Databank for the year of 2013. The main regression equation is presented down below:*
+As the aim of the research is to find the demographic and health factors which may affect the population, I will be dealing with a cross section data and analyze the effects for high income countries. The data is taken form the World Bank Databank for the year of 2013. The main regression equation is presented down below:
 
 
-#Pop= β0 + β1*agedep + β2*limmuni + β3*sanit + β4*sqwage + β5*wage + β6*tuberculosis + β7*fertility + β8*survival65 + β9*unemp + β10*lunemp
+*Pop= β0 + β1agedep + β2limmuni + β3sanit + β4sqwage + β5wage + β6tuberculosis + β7fertility + β8survival65 + β9unemp + β10lunemp*
 
 
-*The dependent variable of my choice Pop is growth rate of mid-year population for the year of 2013 which is measured in percents. The population includes all residents of a country independently from their citizenship, but excludes refugees, asylum-seekers.*
+The dependent variable of my choice Pop is growth rate of mid-year population for the year of 2013 which is measured in percents. The population includes all residents of a country independently from their citizenship, but excludes refugees, asylum-seekers.
 
 
-*The first independent variable – **agedep**, represents the age dependency ratio of people of ages older than 15 and younger than 64 (expressed as a proportion per 100 working-age population). I expect the variable to have a positive effect on the population growth as people of these ages are more likely to have children. Nevertheless, it may have a very strong effect on the dependent variable as both of them account for similar indices.*  
+The first independent variable – **agedep**, represents the age dependency ratio of people of ages older than 15 and younger than 64 (expressed as a proportion per 100 working-age population). I expect the variable to have a positive effect on the population growth as people of these ages are more likely to have children. Nevertheless, it may have a very strong effect on the dependent variable as both of them account for similar indices.
 
 
-*The next explanatory variable – **limmuni**, the data for adequate immunization of children who received vaccines against diphtheria, pertussis (whooping cough), and tetanus (DPT). I’ve implemented the log function as I’ve wanted to normalize the data and present better interpretation of regression results. I anticipate the variable to have a positive sign after the regression, as those diseases are extremely dangerous for children at young age; hence, if the condition of vaccination isn’t met, population growth may be lower. Despite that, as I perform the regression on the data for high-income countries, the variable should not have a strong effect as the level of income often goes along with the development of medical system in a country.*
+The next explanatory variable – **limmuni**, the data for adequate immunization of children who received vaccines against diphtheria, pertussis (whooping cough), and tetanus (DPT). I’ve implemented the log function as I’ve wanted to normalize the data and present better interpretation of regression results. I anticipate the variable to have a positive sign after the regression, as those diseases are extremely dangerous for children at young age; hence, if the condition of vaccination isn’t met, population growth may be lower. Despite that, as I perform the regression on the data for high-income countries, the variable should not have a strong effect as the level of income often goes along with the development of medical system in a country.
 
 
-*Percentage of the population who uses improved sanitation facilities **sanit** (flush/pour flush, composting toilet, etc.) is our next independent variable. I expect it not to have as high impact as on the low-income countries because it follows a similar logic to the variable limmuni: high-income countries are perceived a priori as having good sanitation facilities. That’s why I expect the sign of the regressed variable to be positive, but the degree of impact – to be low.*
+Percentage of the population who uses improved sanitation facilities **sanit** (flush/pour flush, composting toilet, etc.) is our next independent variable. I expect it not to have as high impact as on the low-income countries because it follows a similar logic to the variable limmuni: high-income countries are perceived a priori as having good sanitation facilities. That’s why I expect the sign of the regressed variable to be positive, but the degree of impact – to be low.
 
 
-*The fourth and the fifth explanatory variables are squared wage and salaried workers expressed as a percentage of total number of employed **sqwage***
-*and **wage**. I assume that higher wages of people will give them more security and provide them with an incentive of having more children. I include the squared term as I do not expect the scope of the increasing wages to have the same effect on the population growth over time. That is why my expectation for wage is to have a positive sign, but for sqwage - to be negative.*
+The fourth and the fifth explanatory variables are squared wage and salaried workers expressed as a percentage of total number of employed **sqwage** and **wage**. I assume that higher wages of people will give them more security and provide them with an incentive of having more children. I include the squared term as I do not expect the scope of the increasing wages to have the same effect on the population growth over time. That is why my expectation for wage is to have a positive sign, but for sqwage - to be negative.
 
 
-*I also include in our regression the variable **tuberculosis** that stands for the successful treatment of tuberculosis as a percentage of all new tuberculosis cases. The “success” is defined when a patient completed treatment in a tuberculosis control program. The variable is expected to have positive effect on the population growth, as it prevents the disease and lowers mortality.*
-
-
-
-*The seventh explanatory variable **fertility** represents the fertility rate, i.e. how many children a woman could have gave birth to. As it is one of the major drivers of the population growth, hence the impact is predicted to be strong and positive.*
-*I also consider **survival65** - variable survival rates to age 65 of a cohort of newborn infants when subject to current age-specific mortality rates. The variable is expected to have positive influence on the population growth as higher survival rates give larger time span to have more children. Nevertheless, in the high income-countries the effect probably won’t be of the same significance as in the low-income ones.*
+I also include in our regression the variable **tuberculosis** that stands for the successful treatment of tuberculosis as a percentage of all new tuberculosis cases. The “success” is defined when a patient completed treatment in a tuberculosis control program. The variable is expected to have positive effect on the population growth, as it prevents the disease and lowers mortality.
 
 
 
-*Additionally, I include 2 variables **unemp*** 
-*,**lunemp**  that deal with unemployment of females (percentage of female labour force) and long-term unemployment of both genders as a percentage of total unemployment in a country. As for females I would expect the effect to be positive: if a female is unemployed over time, but is married, for example, she may consider having children. In case of long-term unemployment impact on the population growth – the effect is expected to be negative as well: unemployment assumes low or even absent wages, as children require a lot of investment, it may be simply not feasible for people to have more children when experiencing unemployment.*
+The seventh explanatory variable **fertility** represents the fertility rate, i.e. how many children a woman could have gave birth to. As it is one of the major drivers of the population growth, hence the impact is predicted to be strong and positive.
+
+I also consider **survival65** - variable survival rates to age 65 of a cohort of newborn infants when subject to current age-specific mortality rates. The variable is expected to have positive influence on the population growth as higher survival rates give larger time span to have more children. Nevertheless, in the high income-countries the effect probably won’t be of the same significance as in the low-income ones.
+
+
+
+Additionally, I include 2 variables **unemp**,**lunemp**  that deal with unemployment of females (percentage of female labour force) and long-term unemployment of both genders as a percentage of total unemployment in a country. As for females I would expect the effect to be positive: if a female is unemployed over time, but is married, for example, she may consider having children. In case of long-term unemployment impact on the population growth – the effect is expected to be negative as well: unemployment assumes low or even absent wages, as children require a lot of investment, it may be simply not feasible for people to have more children when experiencing unemployment.
 
 
 
 
-``` {r, warning=FALSE}
+``` {r, warning=FALSE, message=FALSE}
 
-setwd("/Users/skakunyuliya/desktop")
+setwd("/Users/skakunyuliya/IODS-final/IODS-final")
 data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
 agedep <- data$agedep
 fertility <- data$fertility
@@ -77,11 +72,40 @@ dim(data)
 str(data)
 ```
 
+The data was download fron the World Bank. It is a cross section data for 2013. No data wrangling have been done.
 
-``` {r, warning=FALSE}
-library(knitr)
-kable(summary(data$country), format = "pandoc", digits = 2,  align="l")
-```
+Data contains 79 observations (countries) that are listed below
+
+Countries                   | Countries                  | Countires
+--------------------------- | -------------------------- | ---------------------
+Andorra	                    | Croatia	                   |Hungary
+Antigua and Barbuda	        | Curacao	                   |Iceland
+Argentina	                  | Cyprus	                   |Ireland
+Aruba	                      | Czech Republic	           |Isle of Man
+Australia                   | Denmark	                   |Israel
+Austria	                    | Equatorial Guinea          |Italy
+Bahamas, The                | Estonia	                   |Japan
+Bahrain	                    | Faeroe Islands             |Korea, Rep.
+Barbados	                  | Finland                    |Kuwait
+Belgium	                    | France	                   |Latvia
+Bermuda                     | French Polynesia           |Liechtenstein
+Brunei Darussalam	          | Germany	                   |Lithuania
+Canada	                    | Greece                     |Luxembourg
+Cayman Islands              | Greenland	Macao            |SAR, China
+Channel Islands	            | Guam	                     |Malta
+Chile                       | Hong Kong SAR, China	     |Monaco
+Netherlands	                | New Caledonia              |Portugal
+Saudi Arabia                | New Zealand                |Puerto Rico
+Seychelles                  | Northern Mariana Islands   |Qatar
+Singapore                   | Norway	                   |Russian Federation
+Sint Maarten (Dutch part)   | Oman                       |San Marino
+Slovak Republic	            | Poland	                   |United Arab Emirates
+Slovenia	                  | St. Martin (French part)	 |United Kingdom
+Spain	                      | Sweden	                   |United States
+St. Kitts and Nevis         | Switzerland	               |Uruguay
+Venezuela, RB	              | Trinidad and Tobago	       |Virgin Islands (U.S.)
+Turks and Caicos Islands	  |                            |
+
 
 
 ``` {r, warning=FALSE}
@@ -139,7 +163,7 @@ graph = ggpairs(data2, upper = list(continuous = wrap("density", color = "blue")
 graph
 ```
 
-*Now, I will build the Correlation matrix of independent variables*
+Now, I will build the Correlation matrix of independent variables
 
 ``` {r, warning=FALSE}
 library(corrplot)
@@ -268,7 +292,9 @@ gather(data2) %>% ggplot(aes(value, col="pink")) + facet_wrap("key", scales = "f
 
 ## Model Estmation Results
 
-*Now, I will perform the regression analysis in order to analyse the factors affecting population growth.*
+Brief description of the method you are using in your own words.
+
+Now, I will perform the ordinary least squares regression analysis in order to analyse the factors affecting population growth. OLS estimation make sure the the error between the dependent and independ variables are minimized and in such way the estimation results are the most acurate. Therefore, those variable that will show somee xplanatory power will significant and these will be taken into account when given the conclusion of my analysis.
 
 ``` {r, warning=FALSE}
 data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
@@ -294,6 +320,15 @@ summary(model)
 ```
 
 
+The first regression I will running is based on the cross-sectional data for 79 high income countries (as defined by the World Bank Dataset from which I’ve retrieved the data)
+
+
+The R-squared estimate for the regression equals to 89%; which suggests that model explains 89% variation in the data. The probability of F-statistic equals to 0%, and that implies that our model is correctly specified. Nevertheless, 4 variables out of 10 are insignificant:  limmuni, sqwage, wage and lunemp.
+
+
+One of the reasons for that many problems is the lack of the data. Not all of the high income countries have data for all of the chosen variables in this specific year; hence, instead of analyzing suggested 79 countries, only 39 are available for testing. 
+ 
+
 
 ``` {r, warning=FALSE}
 data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
@@ -315,6 +350,16 @@ data1=cbind(data,limmuni,lunemp,sqwage)
 model <- lm(pop ~ agedep+limmuni+sanit+sqwage+wage+tuberculosis+fertility+survival65+unemp+lunemp, data = data1)
 plot(model, which = c(1, 2, 5), col = "orange",  lwd = 3)
 ```
+
+## Model Respicification
+
+Taking those facts into account, I’ve tried to improve the model by eliminating the wage,tuberculosis,lunemp variables from the equation. The rationale behind such a decision is that the first and the third variables were causing correlation; whereas the variable of tuberculosis was lacking the observations. By keeping the squared wage term I will only track whether the effect is diminishing over time or not.
+
+
+The new model we are going to test for high-income countries is
+
+
+**Pop= β0 + β1agedep + β2limmuni + β3sanit + β4sqwage +  β5fertility + β6survival65 + β7unemp**
 
 
 ``` {r, warning=FALSE}
@@ -360,6 +405,31 @@ summary(model2)
 ```
 
 
+The results of the improved regression suggest that our model explains 77.6% of variation in the data. Even though, it’s lower than in the first model, such a result seems to be more reliable. Additionally, the probability of F-statistics confirms corrects specification of the model. Also, the other noticeable trait is an increased number of observations.
+
+
+The agedep variable is significant at 1%-level by the rule of thumb. The obtained results are inconsistent with our initial expectations, as the impact on the population growth is estimated as negative. The output states that a 1% increase in the age-dependent population decreases population growth by 8%.
+
+
+The log of immunization limmuni variable turned out to be insignificant but positive in its sign. This result is actually fulfills my expectations, as higher rates of immunization help to prevent deaths from certain diseases; but, as we’ve mentioned, in high income countries the scope of the impact is relatively low.
+
+
+The variable sanit is significant at 10%-level. This is another variable that follows my expectations when being important for our model and having a positive impact on population growth. The coefficient states that a 1%-increase in the population who uses facilities that are considered as those that improve sanitation will increase annual population growth rate by 3,93%.
+
+
+The sqwage variable is not significant to be used in the model. I can conclude that changes in the impact of the wage on population growth over time are minor, but positive.
+
+
+The variable of fertility rate fertility is significant at 1% level and has a positive impact on the population growth. Such a result is self explanatory as fertility rate is one of the basic determinants of demographic changes. The results suggest that if a woman could have had more children during her fertility years, the population growth rate would have increase by 182%. Such a result seems to be too exaggerated, and could have possibly been enhanced by problems the model carries.
+
+
+The unemp variable is significant at 5%-level. The variable is suggested to have negative impact on the dependent variable. The outcome is consistent with initial predictions: a 1%-increase in female unemployment will decrease population growth rate by 3%.
+
+
+The last variable in the regression that stands for survival to age 65 survival65 is significant at 1%-level. The results are not matching my expectation; it turns out that higher survival rates by 1% decrease the population growth rate by 7%. The scope of the impact is quite large; an explanation for such an outcome is that people may not be having children as they care less about what will happen to them after retirement, as, maybe, governments provide them with some social help. All in all, people regard children to the lower extent as a security for future.
+
+
+
 ``` {r, warning=FALSE}
 
 data <- read.csv(file='MOOC.csv', header=TRUE, row.names=1, sep=",")
@@ -385,5 +455,18 @@ plot(model2, which = c(1, 2, 5), col = "blue",  lwd = 3)
 
 ## Conclusion
 
+
+
 ##Bibliography
+
+
+*1.	The Mexican Commission on Macroeconomics and Health, the development of health  (2004) ‘Investing In Health For Economic Development’. The Mexican Commission on Macroeconomics and Health, the development of health*
+
+*2.	Bloom D.E. and Canning D. (2008) ‘Population Health and	Economic Growth’.  The International Bank for Reconstruction and Development / The World Bank*
+
+*3.	 Sachs J.D.  (2001) ‘Report of the Commission on Macroeconomics and Health’. World Health Organization*
+
+*4.	Moffitt R. (2005) ‘Remarks on the analysis of causal relationships in population research’.  Demography, 42(1), 91-108*
+
+*5.	Joshi S. and Schultz T.P. (2007) ‘Family Planning as an investment in development: evaluation of a program’s consequences in Matlab, Bangladesh’. Economic Growth Center Discussion Paper 951, Yale University, New Haven CT.*
 
