@@ -106,7 +106,7 @@ colnames(data)
 
 
 
-The numerical data was download from the World Bank. It is a cross section data for 2013 that haeve **10 variables** to be discussed later. No data wrangling have been done.
+The numerical data was downloaded from the World Bank. It is a cross section data for 2013 that have **10 variables** to be discussed later. No data wrangling have been done.
 
 Data contains **79 observations** (countries) that are listed below
 
@@ -185,7 +185,7 @@ pic
 
 
 
-Some of the variables' distribution (imuni, unemp) are skewed. Later on, in the process of the empirical analysis, imuni and unemp will be thansformed into the log scale in order to normalize those. Every variables distribution is centered throughout countries. Therefore, I assume there will not be oserved a lot of outliers in the data. However, I will drow the boxplot in order to be sure.
+Some of the variables' distribution (imuni, unemp) is skewed. Later on, in the process of the empirical analysis, imuni and unemp will be thansformed into the log scale in order to normalize those. Every variables distribution is centered throughout countries. Therefore, I assume there will not be oserved a lot of outliers in the data. However, I will draw the boxplot in order to be sure.
 
 
 
@@ -284,7 +284,7 @@ graph1
 
 
 
-As the data is centered majority of the regression line are straight except for those where the huge outliers are visible
+As the data is centered, majority of the regression line are straight except for those where the huge outliers are visible
 
 
 As the variable country and sanit were not used in the assesment of the regression lines I will build couple of more graphs in order to make sure that they look the same as previously analysed
@@ -409,21 +409,20 @@ corrplot(cor_matrix, method = "circle", tl.cex = 1, addCoef.col = "black", type=
 ```
 
 
-Correlation matrix shows that the strongest positive correlation is between fertility and population growth that is logical to observe. The rest of the variable show marginal correlation coeeficient. This can be because of the fact that both demographical and health factors that are not directly correlated are analysed. Population ans sanit show positive correlation.
+Correlation matrix shows that the strongest positive correlation is between fertility and population growth that is logical to observe. The rest of the variables show marginal correlation coeeficient. This can be because of the fact that both demographical and health factors that are not directly correlated are analysed. Population and sanit show positive correlation.
 
-Interesting to note that the level of unemployment and population growth are negatively correlated (-0.31), whereas population and wage are positively (0.26).
+Interesting to note is that the level of unemployment and population growth are negatively correlated (-0.31), whereas population and wage are positively (0.26).
 
 
 
 ## Model Estmation Results
 
-Brief description of the method you are using in your own words.
 
 Now, I will perform the ordinary least squares regression analysis in order to analyse the factors affecting population growth. I will be using OLS estimation method in order to make sure that the sum of squared errror between the dependent and independ variables are minimized. In such way the estimation results are the most acurate. 
 
 I will also make the log transformation on the imuni and unemp variables and will square the wage acorrding to my previous analysis.
 
-Those variable that will show some explanatory power will be significant.Thorefore, I will be able to analyse and draw conclsions on the variables that can the most accurately explain the population growth.
+Those variable that will show some explanatory power will be significant.Therefore, I will be able to analyse and draw conclsions on the variables that can the most accurately explain the population growth.
 
 
 ``` {r, warning=FALSE, message=FALSE}
@@ -489,7 +488,7 @@ plot(model, which = c(1, 2), col = "orange",  lwd = 3)
 
 The plots on the residual does not show much of being fitted that is proving the fact that the model should be respecified. 
 
-The normality plot is on averag pointing ot the fact that the data is normaly distributed
+The normality plot is on average pointing to the fact that the data is normaly distributed
 
 
 ## Model Respicification
@@ -583,7 +582,7 @@ plot(model2, which = c(1, 2), col = "blue",  lwd = 3)
 
 In this case, the model is better capturing the estimation on the population growth as the values are closer to the regression line. Therefore, the chanaces that the squared sum of those errors is minimized.
 
-Data is follows the normal distribution in this case as well
+Data follows the normal distribution in this case as well
 
 
 ## Conclusion
